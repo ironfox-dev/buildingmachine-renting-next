@@ -1,0 +1,64 @@
+{
+  "client_id": "peter_gross",
+  "logo": "peter_gross.png",
+  "menu_items": [
+    {
+      "key": 1,
+      "component": "Fleet",
+      "path": "/fleet",
+      "icon": "EmojiTransportationIcon",
+      "title": "peter_gross:menu_items.fleet.title"
+    }
+  ],
+  "components": [
+    {
+      "component": "Fleet",
+      "properties": {
+        "title": "peter_gross:menu_items.fleet.title"
+      }
+    },
+    {
+      "component": "AllItems",
+      "properties": {
+        "tabItems": [
+          {
+            "key": "live-status",
+            "label": "fleet:live_status",
+            "component": "LiveStatus",
+            "path": "allItems/LiveStatus/live-status"
+          },
+          {
+            "key": "product-data",
+            "label": "fleet:product_data",
+            "component": "ProductInformation",
+            "path": "allItems/ProductInformation/ProductInformation"
+          },
+          {
+            "key": "telematics-data",
+            "label": "fleet:telematics_data",
+            "component": "ProductTelematicsContainer",
+            "path": "allItems/ProductTelematics/product-telematics"
+          },
+          {
+            "key": "rental-information",
+            "label": "fleet:rental_information",
+            "component": "RentalInfoContainer",
+            "path": "fleet/rental-info.container"
+          },
+          {
+            "key": "document",
+            "label": "fleet:document",
+            "component": "DocumentList",
+            "path": "allItems/documentList"
+          },
+          {
+            "key": "history",
+            "label": "fleet:history",
+            "component": "Lectura",
+            "path": "allItems/lectura/lectura"
+          }
+        ]
+      }
+    }
+  ]
+}

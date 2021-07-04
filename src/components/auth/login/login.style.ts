@@ -1,0 +1,155 @@
+import { createStyles } from '@material-ui/core/styles';
+import theme from '../../../layouts/theme';
+
+const logStyle = createStyles({
+  buttonLogin: {
+    width: '7.3rem',
+    height: '2.75rem',
+    color: theme.palette.background.default,
+    textTransform: 'none',
+    fontFamily: 'Roboto',
+    fontSize: '1rem',
+    letterSpacing: '0.15px',
+    lineHeight: '1.2rem',
+    borderRadius: '0.25rem',
+    boxShadow: '0 3px 3px -2px rgba(0,0,0,0.1), 0 3px 4px 0 rgba(0,0,0,0.07), 0 1px 8px 0 rgba(0,0,0,0.06)',
+  },
+  accountRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: '0.8rem 1.2rem 2.25rem 1.2rem',
+  },
+  forgetPassword: {
+    height: '1.2rem',
+    width: '11rem',
+    color: theme.palette.grey[800],
+    fontFamily: 'Roboto',
+    fontSize: '1rem',
+    letterSpacing: '0.15px',
+    lineHeight: '1.2rem',
+    textAlign: 'center',
+    textDecoration: 'none',
+    margin: '0.75rem 1.5rem 0.75rem 0',
+    '&:hover': {
+      color: theme.palette.primary.main,
+    },
+  },
+  emailField: {
+    margin: '1.4rem 1.2rem 1.2rem 1.2rem',
+  },
+  passwordField: {
+    margin: '0 1.2rem 1.2rem 1.2rem',
+  },
+  seperateLine: {
+    height: 1,
+    width: '19.7rem',
+    borderWidth: '1px',
+    borderStyle: 'solid none none none',
+    borderColor: theme.palette.grey[300],
+    margin: '0 auto 2.5rem auto',
+  },
+  noAccount: {
+    color: theme.palette.grey[800],
+    fontFamily: 'Roboto',
+    fontSize: '1.25rem',
+    fontWeight: 'bold',
+    letterSpacing: '0.19px',
+    lineHeight: '1.5rem',
+    textAlign: 'center',
+    margin: '1.75rem 0 1.5rem 0',
+  },
+  regist: {
+    color: theme.palette.primary.main,
+    fontFamily: 'Roboto',
+    fontSize: '1rem',
+    letterSpacing: '0.15px',
+    lineHeight: '1.2rem',
+    textAlign: 'center',
+    textDecoration: 'none',
+    marginBottom: '1.7rem',
+    display: 'block',
+  },
+  iconColor: {
+    color: theme.palette.common.black,
+  },
+  authwrap: {
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
+    marginTop: 20,
+  },
+  verifywrap: {
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
+    padding: '1.5rem',
+  },
+  thankwrap: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: '1rem',
+  },
+  buttonForgot: {
+    width: '12.7rem',
+    height: '2.75rem',
+    color: theme.palette.background.default,
+    textTransform: 'none',
+    //fontFamily: 'Helvetica Regular',
+    fontSize: '1rem',
+    letterSpacing: '0.15px',
+    lineHeight: '1.2rem',
+    borderRadius: '0.25rem',
+    boxShadow: '0 3px 3px -2px rgba(0,0,0,0.1), 0 3px 4px 0 rgba(0,0,0,0.07), 0 1px 8px 0 rgba(0,0,0,0.06)',
+  },
+  abort: {
+    height: '1.2rem',
+    width: '6.2rem',
+    color: theme.palette.grey[800],
+    fontSize: '1rem',
+    //fontFamily: 'Helvetica Regular',
+    letterSpacing: '0.15px',
+    lineHeight: '1.2rem',
+    textAlign: 'center',
+    textDecoration: 'none',
+    margin: '0.75rem 0.6rem 0.75rem 0px',
+    '&:hover': {
+      color: theme.palette.primary.main,
+    },
+  },
+  authform: {
+    width: '22rem',
+    textAlign: 'center',
+  },
+  buttonReset: {
+    float: 'right',
+    width: '13.5rem',
+    height: '2.75rem',
+    marginTop: '1rem',
+    marginBottom: '2.75rem',
+    marginLeft: '7.4rem',
+    borderRadius: '0.25rem',
+    boxShadow: '0 3px 3px -2px rgba(0,0,0,0.1), 0 3px 4px 0 rgba(0,0,0,0.07), 0 1px 8px 0 rgba(0,0,0,0.06)',
+  },
+  passwordFieldReset: {
+    width: '19.7rem',
+    margin: '0px auto 1rem auto',
+  },
+  link: {
+    fontWeight: 'bold',
+  },
+  buttonVerify: {
+    color: theme.palette.common.white,
+    margin: '2.5rem 0',
+  },
+
+  resetPasswordSubtitle: {
+    textAlign: 'center',
+    fontSize: 16,
+    margin: '20px 0',
+  },
+});
+
+export default logStyle;

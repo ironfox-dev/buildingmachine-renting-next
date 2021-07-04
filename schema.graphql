@@ -1,0 +1,701 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type AddressModel {
+  city: String!
+  companyId: CompanyModel!
+  country: String!
+  id: ID!
+  postalCode: String!
+  street: String!
+}
+
+type CompanyModel {
+  addresses: [AddressModel!]!
+  discount: Float!
+  id: ID!
+  name: String!
+  users: [UserModel!]!
+}
+
+type DiscountModel {
+  code: String!
+  currency: String!
+  isActive: Boolean!
+  type: String!
+  value: Float!
+}
+
+type DiscountSuccessDto {
+  discount: Float!
+}
+
+type DocumentCategoryModel {
+  id: ID!
+  name: String!
+}
+
+type DocumentProductModel {
+  documentCategory: ID!
+  id: ID!
+  mimeType: String!
+  name: String!
+  product: ID!
+  uploadedAt: String!
+  user: ID!
+}
+
+type FilteredProductsModel {
+  filteredProducts: [ProductModel!]!
+  totalCount: Float!
+}
+
+type LocationModel {
+  city: String!
+  dieselPrice: Float!
+  gasolinePrice: Float!
+  id: ID!
+  name: String!
+  operatingHour: [OperatingHourModel!]!
+  postalCode: String!
+  street: String!
+  telephone: String!
+}
+
+type Mutation {
+  createDiscount(discount: DiscountCreateDto!): DiscountModel!
+  createDocumentProduct(documentProduct: DocumentProductCreateDto!, file: Upload!): DocumentProductModel!
+  createOrder(order: SalesOrderDto!): SalesOrderModel!
+  createOwner(owner: ProductOwnerDto!): ProductOwnerModel!
+  createProduct(product: ProductDto!, productServices: [ProductServiceDto!]!): ProductModel!
+  createProductModel(productModel: ProductModelDto!): ProductModelModel!
+  createProductServices(productId: String!, productServices: [ProductServiceDto!]!): [ProductServiceModel!]!
+  createServiceTemplate(serviceTemplateDto: ServiceTemplateCreateDto!): ServiceTemplateModel!
+  createUser(user: UserCreateDto!): UserLoggedinDto!
+  deleteDocumentProduct(id: String!): DocumentProductModel!
+  deleteProductService(id: String!): ProductServiceModel!
+  deleteProductServices(ids: [String!]!): [String!]!
+  deleteServiceTemplate(id: ID!): Boolean!
+  loginUser(user: UserLoginDto!): UserLoggedinDto!
+  orderStatusUpdate(orderStatusUpdateInput: OrderStatusUpdateDto!): SalesOrderModel!
+  requestResetPassword(email: String!): UserSuccessDto!
+  resendVerificationEmail(email: String!): UserResendVerificationDto!
+  resetPassword(user: UserResetPasswordDto!): UserSuccessDto!
+  saveLocation(locationInput: LocationCreateDto!, operatingHourInput: [OperatingHoursCreateDto!]!): LocationModel!
+  setCustomerDiscount(discountData: DiscountUpdateDto!): DiscountSuccessDto!
+  updateAccount(account: AccountUpdateDto!): UserSuccessDto!
+  updateCustomer(customer: CustomerUpdateDto!): UserSuccessDto!
+  updateDocumentProduct(documentProduct: DocumentProductUpdateDto, file: Upload, id: String!): DocumentProductModel!
+  updateLocation(id: ID!, locationInput: LocationCreateDto!, operatingHourInput: [OperatingHoursCreateDto!]!): LocationModel!
+  updateOrderServices(orderId: ID!, productId: ID!, services: [UpdateOrderItemServicesDto!]!): SalesOrderModel!
+  updateProduct(id: String!, product: ProductUpdateDto): ProductModel!
+  updateProductService(id: String!, service: ServiceUpdateDto): ProductServiceModel!
+  updateServiceTemplate(id: ID!, serviceTemplateDto: ServiceTemplateUpdateDto!): ServiceTemplateModel!
+  verifyEmail(token: String!): UserSuccessDto!
+  verifyResetPassword(token: String!): UserSuccessDto!
+}
+
+type OperatingHourModel {
+  endTime: String
+  id: ID!
+  startTime: String
+  weekDay: String!
+}
+
+type OrderPriceModel {
+  attachmentsPrices: [ProductPriceModel!]!
+  businessDays: Float!
+  days: Float!
+  orderPrice: Float!
+  orderSubTotal: Float!
+  orderVat: Float!
+  productPrice: ProductPriceModel!
+  servicesPrices: [ServicePriceModel!]!
+}
+
+type PeriodModel {
+  end: DateTime!
+  start: DateTime!
+}
+
+type ProductAvailabilityCalendarDayModel {
+  date: DateTime!
+  slots: [PeriodModel!]
+  type: String!
+}
+
+type ProductAvailabilityCalendarModel {
+  days: [ProductAvailabilityCalendarDayModel!]!
+  productId: ID!
+}
+
+type ProductAvailabilityModel {
+  isAvailable: Boolean!
+  productId: ID!
+}
+
+type ProductAvailableSlotsModel {
+  availableSlots: [PeriodModel!]!
+  productId: ID!
+}
+
+type ProductManufacturerModel {
+  abbreviation: String
+  id: ID!
+  name: String!
+}
+
+type ProductModel {
+  calculateWeekend: Boolean!
+  deposit: Float
+  id: ID!
+  idleHours: Float
+  instruction: String
+  interest: Float
+  leasingRate: Float
+  location: LocationModel
+  locationFormattedAddress: String
+  locationLatitude: Float
+  locationLongitude: Float
+  locationTimestamp: DateTime
+  notes: String
+  operatingHours: Float
+  priceDaily: Float
+  priceMonthly: Float
+  priceWeekly: Float
+  productLeadTime: Float
+  productModel: ProductModelModel!
+  productOwner: ProductOwnerModel!
+  productionYear: Float!
+  purchasePrice: Float
+  residualValue: Float
+  serialNumber: String!
+  serviceTime: Float
+  services: [ProductServiceModel!]!
+  unitExtendedInfo: JSONObject
+  unitInfo: JSONObject
+  unitSerialNumber: Float
+  vin: String
+  workClothing: String
+}
+
+type ProductModelBundleModel {
+  attributes: JSONObject!
+  hasVin: Boolean!
+  id: ID!
+  manufacturer: ProductManufacturerModel!
+  name: String!
+  products: [ProductModel!]!
+  type: ProductTypeModel!
+}
+
+type ProductModelModel {
+  attributes: JSONObject!
+  hasVin: Boolean!
+  id: ID!
+  lecturaId: Float!
+  lecturaModel: String!
+  manufacturer: ProductManufacturerModel!
+  modelLeadTime: Float
+  name: String!
+  productModelBundles: [ProductModelBundleModel!]!
+  type: ProductTypeModel!
+}
+
+type ProductOwnerModel {
+  id: ID!
+  isFlexcavo: Boolean!
+  name: String!
+}
+
+type ProductPriceModel {
+  id: ID!
+  pricePerDay: Float!
+  totalPrice: Float!
+}
+
+type ProductServiceModel {
+  id: ID!
+  price: String!
+  productId: String!
+  serviceTemplate: ServiceTemplateModel!
+  serviceTemplateId: String!
+}
+
+type ProductTrackingModel {
+  id: String!
+  last24Hours: Float
+  locationFormattedAddress: String
+  locationLatitude: Float
+  locationLongitude: Float
+  product: ProductModel!
+  unitSerialNumber: String!
+  workingHours: [ProductWorkingHourModel!]!
+}
+
+type ProductTypeAttributeModel {
+  id: ID!
+  isRequired: Boolean!
+  key: String!
+  maxLength: Float
+  maxValue: Float
+  minValue: Float
+  name: String!
+  type: String!
+  unit: String
+}
+
+type ProductTypeModel {
+  attributes: [ProductTypeAttributeModel!]!
+  id: ID!
+  name: String!
+}
+
+type ProductWorkingHourModel {
+  date: String!
+  idleHours: Float!
+  operatingHours: Float!
+}
+
+type Query {
+  checkUser: UserModel!
+  customer(id: ID!): CompanyModel!
+  documentCategory: [DocumentCategoryModel!]!
+  documentProducts(query: DocumentProductQueryDto!): [DocumentProductModel!]!
+  getAccount: CompanyModel!
+  listCustomers: [CompanyModel!]!
+  listDiscounts: [DiscountModel!]!
+  location(id: ID!): LocationModel!
+  locations: [LocationModel!]!
+  order(id: ID!): SalesOrderModel!
+  orderItemsReservationTime(endDate: DateTime!, productIds: [ID!]!, startDate: DateTime!): [ReservationTimeModel!]!
+  orderPrice(attachmentIds: [ID], endDate: DateTime!, productId: ID!, serviceIds: [ID], startDate: DateTime!): OrderPriceModel!
+  orders(filters: SalesOrderQueryFiltersDto, searchText: String, skip: Float = 0.0, take: Float = 20.0): [SalesOrderModel!]!
+  product(id: ID!): ProductModel!
+  productManufacturers(search: String!): [ProductManufacturerModel!]!
+  productModels: [ProductModelModel!]!
+  productOwners: [ProductOwnerModel!]!
+  productTracking(endDate: String, productId: ID!, startDate: String): ProductTrackingModel!
+  products: [ProductModel!]!
+  productsAvailability(endDate: DateTime!, productIds: [ID!]!, startDate: DateTime!): [ProductAvailabilityModel!]!
+  productsAvailabilityCalendar(endMonth: DateTime!, productIds: [ID!]!, startMonth: DateTime!): [ProductAvailabilityCalendarModel!]!
+  productsAvailableSlots(endDate: DateTime!, productIds: [ID!]!, startDate: DateTime!): [ProductAvailableSlotsModel!]!
+  productsFiltered(locations: [String!] = [], query: SearchQueryParameterDto!): FilteredProductsModel!
+  serviceTemplate(id: ID!, locale: String): ServiceTemplateModel!
+  serviceTemplates(locale: String): [ServiceTemplateModel!]!
+  user(id: String!): UserModel!
+}
+
+type ReservationTimeModel {
+  end: DateTime!
+  productId: ID!
+  start: DateTime!
+}
+
+type RoleModel {
+  id: ID!
+  key: String!
+  name: String!
+  privileges: [String!]!
+  users: [UserModel!]!
+}
+
+type SalesOrderAddressModel {
+  address: String!
+  city: String!
+  country: String!
+  id: ID!
+  type: String!
+  zipCode: String!
+}
+
+type SalesOrderItemModel {
+  days: Float!
+  id: ID!
+  parentSalesOrderItem: SalesOrderItemModel
+  pricePerDay: Float!
+  product: ProductModel!
+  productId: String!
+  productManufacturer: String!
+  productModel: String!
+  productType: String!
+  reservationEnd: DateTime!
+  reservationStart: DateTime!
+  salesOrderItemServices: [SalesOrderItemServiceModel!]!
+  taxPercentage: Float!
+  totalPrice: Float!
+}
+
+type SalesOrderItemServiceModel {
+  days: Float!
+  id: ID!
+  price: Float
+  pricingStructure: String!
+  productServiceId: String!
+  serviceName: String!
+  taxPercentage: Float!
+  totalPrice: Float!
+}
+
+type SalesOrderModel {
+  businessDays: Float!
+  channel: String!
+  companyName: String!
+  days: Float!
+  deliveryMethod: String!
+  email: String!
+  endDate: DateTime!
+  firstName: String!
+  gender: String!
+  id: ID!
+  lastName: String!
+  location: String!
+  orderId: Float!
+  phoneCode: Float!
+  phoneNumber: String!
+  price: Float!
+  salesOrderAddresses: [SalesOrderAddressModel!]!
+  salesOrderItems: [SalesOrderItemModel!]!
+  startDate: DateTime!
+  status: String!
+  subTotal: Float!
+  taxPercentage: Float!
+  vat: Float!
+}
+
+type ServicePriceModel {
+  id: ID!
+  price: Float!
+  pricingStructure: String!
+  totalPrice: Float!
+}
+
+type ServiceTemplateModel {
+  default: Boolean!
+  description: String!
+  id: ID!
+  includingWeekend: Boolean!
+  name: String!
+  pricingStructure: String!
+}
+
+type UserLoggedinDto {
+  companyId: String!
+  email: String!
+  id: String!
+  isEmailVerified: Boolean!
+  token: String
+}
+
+type UserModel {
+  company: CompanyModel!
+  email: String!
+  firstname: String!
+  gender: String!
+  id: ID!
+  isEmailVerified: Boolean!
+  lastname: String!
+  phone: String!
+  phoneCode: String!
+  position: String!
+  resetPasswordToken: String
+  resetPasswordTokenExp: DateTime
+  role: RoleModel!
+}
+
+type UserResendVerificationDto {
+  alreadyVerified: Boolean!
+  emailSent: Boolean!
+}
+
+type UserSuccessDto {
+  isSuccessful: Boolean!
+}
+
+input AccountUpdateDto {
+  addressId: String!
+  city: String!
+  companyId: String!
+  companyName: String!
+  country: String
+  email: String!
+  firstname: String!
+  gender: String
+  lastname: String!
+  password: String!
+  phone: String
+  phoneCode: String
+  position: String!
+  postalCode: String!
+  street: String!
+  userId: String!
+}
+
+input CustomerUpdateDto {
+  addressId: String!
+  city: String!
+  companyId: String!
+  companyName: String!
+  country: String!
+  email: String!
+  firstname: String!
+  gender: String
+  lastname: String!
+  password: String
+  phone: String!
+  phoneCode: String!
+  position: String
+  postalCode: String!
+  street: String!
+  userId: String!
+}
+
+input DiscountCreateDto {
+  code: String!
+  currency: String!
+  isActive: Boolean!
+  type: String!
+  value: Float!
+}
+
+input DiscountUpdateDto {
+  companyId: String!
+  discount: Float!
+}
+
+input DocumentProductCreateDto {
+  documentCategory: String!
+  product: String!
+  user: String!
+}
+
+input DocumentProductQueryDto {
+  productId: String!
+  userId: String!
+}
+
+input DocumentProductUpdateDto {
+  documentCategory: String
+  extension: String
+  mimeType: String
+  name: String
+}
+
+input LocationCreateDto {
+  city: String!
+  dieselPrice: Float!
+  gasolinePrice: Float!
+  name: String!
+  postalCode: String!
+  street: String!
+  telephone: String!
+}
+
+input ModelAdditionalFieldDto {
+  name: String!
+  type: String!
+  value: String!
+}
+
+input OperatingHoursCreateDto {
+  endTime: String
+  startTime: String
+  weekDay: String!
+}
+
+input OrderStatusUpdateDto {
+  orderId: String!
+  status: String!
+}
+
+input ProductDto {
+  calculateWeekend: Boolean
+  deposit: Float
+  instruction: String
+  interest: Float
+  leasingRate: Float
+  location: String
+  notes: String
+  priceDaily: Float
+  priceMonthly: Float
+  priceWeekly: Float
+  productLeadTime: Float
+  productModelId: String!
+  productOwnerId: String!
+  productionYear: Float!
+  purchasePrice: Float
+  residualValue: Float
+  serialNumber: String!
+  serviceTime: Float
+  unitSerialNumber: Float
+  vin: String
+  workClothing: String
+}
+
+input ProductModelDto {
+  accessory_1: String!
+  accessory_2: String!
+  accessory_3: String!
+  accessory_4: String!
+  accessory_5: String!
+  additionalFields: [ModelAdditionalFieldDto!]!
+  bglNumber: String!
+  hasVin: Boolean!
+  height: Float!
+  keyParameterName: String!
+  keyParameterValue: Float!
+  length: Float!
+  manufacturerId: String!
+  model: String!
+  modelLeadTime: Float!
+  typeId: String!
+  weight: Float!
+  width: Float!
+}
+
+input ProductOwnerDto {
+  name: String!
+}
+
+input ProductServiceDto {
+  price: Float!
+  serviceTemplate: String!
+}
+
+input ProductUpdateDto {
+  calculateWeekend: Boolean
+  deposit: Float
+  instruction: String
+  interest: Float
+  leasingRate: Float
+  location: String
+  notes: String
+  priceDaily: Float
+  priceMonthly: Float
+  priceWeekly: Float
+  productLeadTime: Float
+  productModelId: String
+  productOwnerId: String
+  productionYear: Float
+  purchasePrice: Float
+  residualValue: Float
+  serialNumber: String
+  serviceTime: Float
+  unitSerialNumber: Float
+  vin: String
+  workClothing: String
+}
+
+input SalesOrderAddressDto {
+  address: String!
+  city: String!
+  country: String!
+  zipCode: String!
+}
+
+input SalesOrderDto {
+  bundleIds: [String!]
+  channel: String!
+  companyName: String!
+  deliveryMethod: String!
+  email: String!
+  endDate: DateTime!
+  firstName: String!
+  gender: String!
+  lastName: String!
+  location: String!
+  personalAddress: SalesOrderAddressDto!
+  phoneCode: Float!
+  phoneNumber: Float!
+  productId: String!
+  projectAddress: SalesOrderAddressDto!
+  serviceIds: [String!]
+  startDate: DateTime!
+}
+
+input SalesOrderQueryFiltersDto {
+  channel: String
+  companyName: [String!]
+  endDate: DateTime
+  firstName: [String!]
+  lastName: [String!]
+  location: [String!]
+  startDate: DateTime
+}
+
+input SearchQueryParameterDto {
+  limit: Float!
+  offset: Float!
+  order: String!
+  order_column: String!
+  search: String!
+}
+
+input ServiceTemplateCreateDto {
+  default: Boolean!
+  includingWeekend: Boolean!
+  locales: [ServiceTemplateLocalizedDto!]!
+  pricingStructure: String!
+}
+
+input ServiceTemplateLocalizedDto {
+  description: String!
+  locale: String!
+  name: String!
+}
+
+input ServiceTemplateUpdateDto {
+  default: Boolean
+  includingWeekend: Boolean
+  locales: [ServiceTemplateLocalizedDto!]
+  pricingStructure: String
+}
+
+input ServiceUpdateDto {
+  price: Float!
+}
+
+input UpdateOrderItemServicesDto {
+  price: String!
+  serviceId: String!
+}
+
+input UserCreateDto {
+  city: String!
+  companyName: String!
+  country: String!
+  email: String!
+  firstname: String!
+  gender: String!
+  lastname: String!
+  password: String!
+  phone: String!
+  phoneCode: String!
+  position: String!
+  postalCode: String!
+  street: String!
+}
+
+input UserLoginDto {
+  email: String!
+  password: String!
+}
+
+input UserResetPasswordDto {
+  password: String!
+  token: String!
+}
+
+
+"A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format."
+scalar DateTime
+
+"JSONObject custom scalar type"
+scalar JSONObject
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload

@@ -1,0 +1,11 @@
+import React, { ReactElement } from 'react';
+import Layout from '~/layouts/websiteLayout';
+import ProductCategories from '~/components/website/ProductCategories/product-categories';
+
+const ProductNotFoundPage = (): ReactElement => (
+  <Layout title="Flexcavo">
+    <ProductCategories />
+  </Layout>
+);
+
+export default ProductNotFoundPage;

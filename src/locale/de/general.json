@@ -1,0 +1,31 @@
+{
+  "menu_items": {
+    "product_model": {
+      "title": "Product Model"
+    },
+    "product": {
+      "title": "Product"
+    },
+    "fleet": {
+      "title": "Flotte"
+    },
+    "rental": {
+      "title": "Miete"
+    },
+    "location": {
+      "title": "Ort"
+    },
+    "clients": {
+      "title": "Kunden"
+    },
+    "account": {
+      "title": "Account"
+    },
+    "settings": {
+      "title": "Settings"
+    },
+    "logout": {
+      "title": "Logout"
+    }
+  }
+}

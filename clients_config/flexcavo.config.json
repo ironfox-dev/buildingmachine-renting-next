@@ -1,0 +1,122 @@
+{
+  "client_id": "flexcavo",
+  "logo": "flexcavo.png",
+  "menu_items": [
+    {
+      "key": 1,
+      "component": "Fleet",
+      "path": "/fleet",
+      "icon": "EmojiTransportationIcon",
+      "title": "general:menu_items.fleet.title"
+    },
+    {
+      "key": 2,
+      "component": "Rental",
+      "path": "/rental",
+      "icon": "ShoppingCartIcon",
+      "title": "general:menu_items.rental.title"
+    },
+    {
+      "key": 3,
+      "component": "Locations",
+      "path": "/locations",
+      "icon": "PinDropIcon",
+      "title": "general:menu_items.location.title"
+    },
+    {
+      "key": 4,
+      "component": "Clients",
+      "path": "/customers",
+      "icon": "PeopleIcon",
+      "title": "general:menu_items.clients.title"
+    },
+    {
+      "key": 5,
+      "component": "Settings",
+      "path": "/settings",
+      "icon": "SettingsIcon",
+      "title": "general:menu_items.settings.title"
+    }
+  ],
+  "components": [
+    {
+      "component": "Fleet",
+      "properties": {
+        "title": "general:menu_items.fleet.title"
+      }
+    },
+    {
+      "component": "AllItems",
+      "properties": {
+        "tabItems": [
+          {
+            "key": "live-status",
+            "label": "fleet:live_status",
+            "component": "LiveStatus",
+            "path": "allItems/LiveStatus/live-status"
+          },
+          {
+            "key": "product-data",
+            "label": "fleet:product_data",
+            "component": "ProductInformation",
+            "path": "allItems/ProductInformation/ProductInformation"
+          },
+          {
+            "key": "telematics-data",
+            "label": "fleet:telematics_data",
+            "component": "ProductTelematicsContainer",
+            "path": "allItems/ProductTelematics/product-telematics"
+          },
+          {
+            "key": "rental-information",
+            "label": "fleet:rental_information",
+            "component": "RentalInfoContainer",
+            "path": "fleet/rental-info.container"
+          },
+          {
+            "key": "document",
+            "label": "fleet:document",
+            "component": "DocumentList",
+            "path": "allItems/documentList"
+          },
+          {
+            "key": "history",
+            "label": "fleet:history",
+            "component": "Lectura",
+            "path": "allItems/lectura/lectura"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Rental",
+      "properties": {
+        "title": "general:menu_items.rental.title"
+      }
+    },
+    {
+      "component": "Locations",
+      "properties": {
+        "title": "general:menu_items.location.title"
+      }
+    },
+    {
+      "component": "Clients",
+      "properties": {
+        "title": "general:menu_items.clients.title"
+      }
+    },
+    {
+      "component": "Account",
+      "properties": {
+        "title": "general:menu_items.account.title"
+      }
+    },
+    {
+      "component": "Settings",
+      "properties": {
+        "title": "general:menu_items.settings.title"
+      }
+    }
+  ]
+}

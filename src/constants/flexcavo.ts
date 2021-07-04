@@ -1,0 +1,10 @@
+export const flexcavoContactEmail = 'kontakt@flexcavo.de';
+export const flexcavoContactPhone = '+49 08031 8873504';
+export const flexcavoCalendarUrl = process.env.NEXT_PUBLIC_CALENDLY_CONTACT;
+export const flexcavoFacebookUrl = 'https://www.facebook.com/flexcavo/';
+export const flexcavoInstagramUrl = 'https://www.instagram.com/flexcavo/';
+export const flexcavoLinkedinUrl = 'https://www.linkedin.com/company/flexcavo/';
+export const faqUrl = 'https://flexcavo-7649841.hs-sites.com/knowledge';
+export const cookiebotUrl = 'https://consent.cookiebot.com/5580296f-ee4c-4e61-94b0-858fe7d75cb2/cd.js';
+export const breezyUrl = 'https://flexcavo.breezy.hr/embed/js?inline=true&group_by=none';
+export const flexcavoCompanyName = 'Flexcavo Gmbh';

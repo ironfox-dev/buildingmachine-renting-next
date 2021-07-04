@@ -1,0 +1,12 @@
+{
+  "add_change_remove_service": "Add, modify or remove services",
+  "cancel": "cancel",
+  "confirm_delete": "Do you really want to delete this service?",
+  "create_new_service": "Create new service",
+  "currency_and_taxes": "Currency and taxes",
+  "delete": "delete",
+  "description": "Description",
+  "manage_services": "Manage services",
+  "save": "Save",
+  "service_name": "Service Name"
+}

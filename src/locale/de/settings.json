@@ -1,0 +1,12 @@
+{
+  "manage_services": "Services verwalten",
+  "add_change_remove_service": "Hinzufügen, verändern oder entfernen von Services",
+  "create_new_service": "Neuen Service anlegen",
+  "description": "Beschreibung",
+  "service_name": "Serviceleistung",
+  "cancel": "stornieren",
+  "save": "Speichern",
+  "currency_and_taxes": "Währung und Steuern",
+  "confirm_delete": "Möchten Sie diesen Service wirklich löschen?",
+  "delete": "löschen"
+}

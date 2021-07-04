@@ -1,0 +1,12 @@
+{
+  "bill": "Invoice",
+  "checklist": "Checklist",
+  "contract": "Contract",
+  "datasheet": "Data sheet",
+  "insurance-policy": "Insurance policy",
+  "maintenance-report": "Maintenance report",
+  "operating-manual": "Manual",
+  "other": "Other",
+  "product-picture": "Product image",
+  "user-avatar": "User avatar"
+}

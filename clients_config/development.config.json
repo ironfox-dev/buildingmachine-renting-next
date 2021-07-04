@@ -1,0 +1,178 @@
+{
+  "client_id": "development",
+  "logo": "flexcavo.png",
+  "menu_items": [
+    {
+      "key": 1,
+      "component": "ProductModel",
+      "path": "/product-model",
+      "icon": "ClassIcon",
+      "title": "general:menu_items.product_model.title"
+    },
+    {
+      "key": 2,
+      "component": "Product",
+      "path": "/product",
+      "icon": "DirectionsCarIcon",
+      "title": "general:menu_items.product.title"
+    },
+    {
+      "key": 3,
+      "component": "Fleet",
+      "path": "/fleet",
+      "icon": "EmojiTransportationIcon",
+      "title": "general:menu_items.fleet.title"
+    },
+    {
+      "key": 4,
+      "component": "Rental",
+      "path": "/rental",
+      "icon": "ShoppingCartIcon",
+      "title": "general:menu_items.rental.title"
+    },
+    {
+      "key": 5,
+      "component": "Locations",
+      "path": "/locations",
+      "icon": "PinDropIcon",
+      "title": "general:menu_items.location.title"
+    },
+    {
+      "key": 6,
+      "component": "Customers",
+      "path": "/customers",
+      "icon": "PeopleIcon",
+      "title": "general:menu_items.clients.title"
+    },
+    {
+      "key": 7,
+      "component": "Settings",
+      "path": "/settings",
+      "icon": "SettingsIcon",
+      "title": "general:menu_items.settings.title"
+    }
+  ],
+  "components": [
+    {
+      "component": "ProductModel",
+      "properties": {
+        "title": "general:menu_items.product_model.title"
+      }
+    },
+    {
+      "component": "Product",
+      "properties": {
+        "title": "general:menu_items.product.title"
+      }
+    },
+    {
+      "component": "Fleet",
+      "properties": {
+        "title": "general:menu_items.fleet.title"
+      }
+    },
+    {
+      "component": "AllItems",
+      "properties": {
+        "tabItems": [
+          {
+            "key": "base_data",
+            "label": "fleet:base_data",
+            "component": "MasterDataTab",
+            "path": "allItems/sections/GeneralTab/general-tab",
+            "sections": [
+              {
+                "label": "fleet:base_data",
+                "component": "MasterDataSection",
+                "path": "allItems/sections/MasterData/master-data",
+                "labels": [{
+                  "dataField": "product.productModel.manufacturer.name",
+                  "key": "",
+                  "label": ""
+                }, {
+                  "dataField": "product.productModel.name",
+                  "key": "",
+                  "label": ""
+                }, {
+                  "dataField": "product.serialNumber",
+                  "key": "",
+                  "label": ""
+                }]
+              }, {
+                "label": "fleet:bgl",
+                "component": "BglDataSection",
+                "path": "allItems/sections/BglData/bgl-data"
+              }
+            ]
+          },
+          {
+            "key": "live-status",
+            "label": "fleet:live_status",
+            "component": "LiveStatus",
+            "path": "allItems/LiveStatus/live-status"
+          },
+          {
+            "key": "product-data",
+            "label": "fleet:product_data",
+            "component": "ProductInformation",
+            "path": "allItems/ProductInformation/ProductInformation"
+          },
+          {
+            "key": "telematics-data",
+            "label": "fleet:telematics_data",
+            "component": "ProductTelematicsContainer",
+            "path": "allItems/ProductTelematics/product-telematics"
+          },
+          {
+            "key": "rental-information",
+            "label": "fleet:rental_information",
+            "component": "RentalInfoContainer",
+            "path": "fleet/rental-info.container"
+          },
+          {
+            "key": "document",
+            "label": "fleet:document",
+            "component": "DocumentList",
+            "path": "allItems/documentList"
+          },
+          {
+            "key": "history",
+            "label": "fleet:history",
+            "component": "Lectura",
+            "path": "allItems/lectura/lectura"
+          }
+        ]
+      }
+    },
+    {
+      "component": "Rental",
+      "properties": {
+        "title": "general:menu_items.rental.title"
+      }
+    },
+    {
+      "component": "Locations",
+      "properties": {
+        "title": "general:menu_items.location.title"
+      }
+    },
+    {
+      "component": "Clients",
+      "properties": {
+        "title": "general:menu_items.clients.title"
+      }
+    },
+    {
+      "component": "Account",
+      "properties": {
+        "title": "general:menu_items.account.title"
+      }
+    },
+    {
+      "component": "Settings",
+      "properties": {
+        "title": "general:menu_items.settings.title"
+      }
+    }
+  ]
+}
